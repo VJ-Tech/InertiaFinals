@@ -10,7 +10,6 @@ class Player extends Model
     use HasFactory;
 
     protected $fillable = [
-        'imageUrl',
         'player_id',
         'username',
         'email',

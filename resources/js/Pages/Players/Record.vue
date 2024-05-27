@@ -14,13 +14,12 @@ const props = defineProps({
 <template>
     <main id="page-trans">
         <div class="container">
-            <header class="text-4xl font-bold mb-4 py-2 px-4">Players</header>
-            <p class="text-xl text-gray-600 font-bold py-2 px-4">list of players active:</p>
+            <header class="text-4xl font-bold mb-4 py-2 px-4">Persons</header>
             <div class="card-container p-4">
                 <Link v-for="(players, index) in players" :key="index" :href="'/players/' + players.id" class="btn card-link">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="text-xl font-semibold">Player ID: {{ players.player_id }}</h2>
+                            <h2 class="text-xl font-semibold">Person ID: {{ players.player_id }}</h2>
                         </div>
                         <div class="card-body">
                             <p><strong>Username:</strong> {{ players.username }}</p>
@@ -47,21 +46,16 @@ header {
 }
 
 .card {
-    background-color: #2a2b2c;
+    background-color: #909090;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
     transition: transform 0.2s;
     width: 200px;
-    height: 120px; 
+    height: 120px;
     display: flex;
     flex-direction: column;
-}
-.card h2 {
-    background: linear-gradient(45deg, #ff6b6b, #f8e8a2, #6bff95);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .card:hover {
@@ -74,17 +68,10 @@ header {
     margin-bottom: 8px;
 }
 
-.card-body p {
-    background: linear-gradient(45deg, #ff6b6b, #f8e8a2, #6bff95);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 5px 0;
-    word-wrap: break-word;
-}
 
 .card-link {
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
 
 </style>

@@ -4,100 +4,86 @@ import Homelayout from '@/Layouts/Homelayout.vue';
 
 defineOptions({
     layout: Homelayout
-})
+});
 
-const form =  useForm({
+const form = useForm({
     imageUrl: '',
     player_id: '',
-    username:    '',
-    email:    '',
+    username: '',
+    email: '',
     password: '',
-})
+});
 
 const submit = () => {
-    form.submit('post', '/Record')
-}
+    form.submit('post', '/Record');
+};
 </script>
 
 <template>
-    <main id="page-trans" class="futuristic-background">
-        <header class="text-4xl fw-bold py-4 text-center text-white">Input Player Info</header>
-            <div style="max-width: 400px; margin-left: 31%;" class="p-4 text-center">
-                <form @submit.prevent="submit" class="futuristic-form">
-                    <div class="mb-3">
-                        <label for="imageUrl" class="text-white font-bold">Image URL:</label>
-                        <input type="text" id="imageUrl" class="w-full futuristic-input" v-model="form.imageUrl">
-                    </div>
-                    <div class="mb-3">
-                        <label for="player_id" class="text-white font-bold">Player ID:</label>
-                        <input type="number" id="player_id" class="w-full futuristic-input" v-model="form.player_id">
-                    </div>
-                    <div class="mb-3">
-                        <label for="username" class="text-white font-bold">Username:</label>
-                        <input type="text" id="username" class="w-full futuristic-input" v-model="form.username">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="text-white font-bold">Email:</label>
-                        <input type="text" id="email" class="w-full futuristic-input" v-model="form.email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="text-white font-bold">Password:</label>
-                        <input type="password" id="password" class="w-full futuristic-input" v-model="form.password">
-                    </div>
-                    <button type="submit" class="link bg-gray-600 fw-bold text-white py-2 px-4 rounded futuristic-button">Save</button>
-                </form>
-            </div>
+    <main id="page-trans" class="bg-gray-100 py-8">
+        <header class="text-4xl font-bold py-4 text-center text-gray-800">Add a Person</header>
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form @submit.prevent="submit">
+                <div class="mb-4">
+                    <label for="player_id" class="block text-gray-700 font-bold mb-2">Person ID:</label>
+                    <input type="number" id="player_id" class="w-full px-3 py-2 border rounded-lg" v-model="form.player_id" required>
+                </div>
+                <div class="mb-4">
+                    <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
+                    <input type="text" id="username" class="w-full px-3 py-2 border rounded-lg" v-model="form.username" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+                    <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg" v-model="form.email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
+                    <input type="password" id="password" class="w-full px-3 py-2 border rounded-lg" v-model="form.password" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">Save</button>
+            </form>
+        </div>
     </main>
 </template>
 
 <style scoped>
 header {
-    font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(45deg, #ff6b6b, #f8e8a2, #6bff95);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: 'Arial', sans-serif;
 }
 
-.futuristic-background {
-    background-image: url('https://i.pinimg.com/originals/e3/7c/21/e37c2105950eb3d999f38ddc6cad2860.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
+.bg-gray-100 {
+    background-color: #f7fafc;
 }
 
-.futuristic-form {
-    border: 2px solid #00a2ff;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 119, 255, 0.1);
+.text-gray-800 {
+    color: #2d3748;
 }
 
-.futuristic-input {
-    border: none;
-    border-bottom: 2px solid #00e1ff;
-    background-color: transparent;
-    color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: border-bottom-color 0.3s ease-in-out;
+.text-gray-700 {
+    color: #4a5568;
 }
 
-.futuristic-input:focus {
-    outline: none;
-    border-bottom-color: #fff;
+.bg-white {
+    background-color: #ffffff;
 }
 
-.futuristic-button {
-    background-color: #00b7ff;
-    border: none;
-    color: #000;
-    font-size: 18px;
-    transition: background-color 0.3s ease-in-out;
+.border {
+    border: 1px solid #cbd5e0;
 }
 
-.futuristic-button:hover {
-    background-color: #9fc1ff;
-    color: #006eff;
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hover\:bg-blue-700:hover {
+    background-color: #2b6cb0;
+}
+
+.transition {
+    transition: all 0.2s ease-in-out;
 }
 </style>

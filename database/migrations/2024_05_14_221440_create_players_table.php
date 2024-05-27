@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->string('imageUrl');
             $table->integer('player_id');
             $table->string('username');
             $table->string('email');
@@ -21,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */

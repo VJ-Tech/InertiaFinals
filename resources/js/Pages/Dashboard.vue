@@ -7,10 +7,9 @@ import { Head } from '@inertiajs/vue3';
 <template>
     <Head title="Dashboard" />
 
-    <Homelayout> 
+    <Homelayout>
         <main id="page-trans">
             <header class="welcome">Welcome  {{ $page.props.auth.user.name }}!</header>
-            <img src="https://i.pinimg.com/originals/a0/50/34/a050342aa80f73199b7ff03eae27a316.gif" alt="">
         </main>
     </Homelayout>
 </template>

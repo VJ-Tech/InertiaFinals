@@ -9,25 +9,21 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 <template>
     <div class="flex">
         <div class="navbar w-[200px] bg-gray-800 text-white">
-            <img src="https://camo.githubusercontent.com/4959ad8bf1b603d7e025c2cfd84b70ede747602b04648c79e8cba6bd9ebf9d4d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6e61696a706f6c6c2f696d6167652f75706c6f61642f76313637393333343438362f49636f6e73253230616e64253230466c617469636f6e732f70726f66696c655f75646d3067312e676966" alt="Profile Image">
             <nav class="item-center">
-                <h1 class="text-center mt-5 text-3xl">Gamespace</h1>
-                <Link href="/about" class="about py-2 px-5 text-center rounded mt-3 flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>About</Link>
+                <h1 class="text-center mt-5 text-3xl"></h1>
+                 <div class="about py-2 px-5 text-center rounded mt-3 flex">
+                    <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Dashboard
+                                </NavLink>
+                 </div>
                 <Link href="/player" class="about py-2 px-5 text-center rounded flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-                    </svg>Player</Link>
+                    </svg>Add Person</Link>
                 <Link href="/player-list" class="about py-2 px-5 text-center rounded flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-                    </svg>Player List</Link>
-                <Link href="/games" class="about py-2 px-5 text-center rounded flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                    </svg>Games</Link>
+                    </svg>Person List</Link>
             </nav>
         </div>
         <div class="content flex-grow">
@@ -36,9 +32,6 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex justify-between h-16">
                             <div class="flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </NavLink>
                             </div>
                             <div class="hidden sm:flex sm:items-center sm:ms-6">
                                 <div class="ms-3 relative">

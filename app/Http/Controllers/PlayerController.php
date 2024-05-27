@@ -21,7 +21,6 @@ class PlayerController extends Controller
 
     public function store(Request $request) {
         $request->validate([
-            'imageUrl' => 'required',
             'player_id' => 'required',
             'username' => 'required',
             'email' => 'required',
@@ -33,7 +32,7 @@ class PlayerController extends Controller
     }
 
     public function show(Player $players) {
-        
+
         return inertia('Players/View', [
             'players' => $players
         ]);
@@ -47,14 +46,14 @@ class PlayerController extends Controller
             'email' => '',
             'password' => ''
         ]);
-        
+
         $player->update($fields);
         return redirect('/Record');
     }
 
     public function destroy(Player $player){
         $player->delete();
-        
+
         return redirect('/Record');
     }
 }
